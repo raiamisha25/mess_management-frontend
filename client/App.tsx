@@ -53,16 +53,6 @@ function ProtectedRoute({
 }
 
 const App = () => {
-  const [isLoading, setIsLoading] = useState(true);
-
-  useEffect(() => {
-    setIsLoading(false);
-  }, []);
-
-  if (isLoading) {
-    return null;
-  }
-
   return (
     <QueryClientProvider client={queryClient}>
       <TooltipProvider>
@@ -134,4 +124,4 @@ const App = () => {
   );
 };
 
-createRoot(document.getElementById("root")!).render(<App />);
+export default App;
