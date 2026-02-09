@@ -12,51 +12,51 @@
    * A different format will require also updating the theme in tailwind.config.ts.
   */
   :root {
-    --background: 0 0% 100%;
-    --foreground: 225 10% 15%;
+    /* HMS Design System - Locked Colors */
+    --background: 218 25% 97%;
+    --foreground: 240 6% 18%;
 
     --card: 0 0% 100%;
-    --card-foreground: 225 10% 15%;
+    --card-foreground: 240 6% 18%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 225 10% 15%;
+    --popover-foreground: 240 6% 18%;
 
-    --primary: 225 40% 25%;
+    --primary: 268 51% 55%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 225 10% 90%;
-    --secondary-foreground: 225 10% 15%;
+    --secondary: 218 25% 97%;
+    --secondary-foreground: 240 6% 18%;
 
-    --muted: 0 0% 94%;
-    --muted-foreground: 225 10% 45%;
+    --muted: 218 10% 95%;
+    --muted-foreground: 231 8% 42%;
 
-    --accent: 225 40% 25%;
+    --accent: 268 51% 55%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 0 0% 92%;
-    --input: 0 0% 98%;
-    --ring: 225 40% 25%;
+    --border: 225 17% 92%;
+    --input: 0 0% 100%;
+    --ring: 268 51% 55%;
 
     --radius: 0.375rem;
 
-    --sidebar-background: 225 40% 25%;
-
+    /* Sidebar Colors */
+    --sidebar-background: 245 12% 34%;
     --sidebar-foreground: 0 0% 100%;
 
-    --sidebar-primary: 225 40% 25%;
-
+    --sidebar-primary: 268 51% 55%;
     --sidebar-primary-foreground: 0 0% 100%;
 
-    --sidebar-accent: 225 40% 35%;
+    --sidebar-accent: 245 12% 44%;
 
     --sidebar-accent-foreground: 0 0% 100%;
 
-    --sidebar-border: 225 40% 30%;
+    --sidebar-border: 245 12% 40%;
 
-    --sidebar-ring: 225 40% 25%;
+    --sidebar-ring: 268 51% 55%;
   }
 
   .dark {
