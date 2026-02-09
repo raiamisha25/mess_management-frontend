@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
-import { Menu, X } from "lucide-react";
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -26,37 +25,38 @@ export default function Layout({ children, role }: LayoutProps) {
   };
 
   const studentNavItems = [
-    { label: "Dashboard", path: "/student/dashboard", icon: "📊" },
-    { label: "View Menu", path: "/student/menu", icon: "🍽️" },
-    { label: "Meal Attendance", path: "/student/attendance", icon: "✓" },
-    { label: "Meal Cancellation", path: "/student/cancellation", icon: "✗" },
-    { label: "View Bill", path: "/student/bill", icon: "💰" },
-    { label: "View Notices", path: "/student/notices", icon: "📢" },
+    { label: "Dashboard", path: "/student/dashboard" },
+    { label: "View Menu", path: "/student/menu" },
+    { label: "Meal Attendance", path: "/student/attendance" },
+    { label: "Meal Cancellation", path: "/student/cancellation" },
+    { label: "View Bill", path: "/student/bill" },
+    { label: "View Notices", path: "/student/notices" },
   ];
 
   const adminNavItems = [
-    { label: "Dashboard", path: "/admin/dashboard", icon: "📊" },
-    { label: "Menu Management", path: "/admin/menu", icon: "🍽️" },
-    { label: "Attendance & Reports", path: "/admin/attendance", icon: "📈" },
-    { label: "Upload Bill", path: "/admin/bill", icon: "💾" },
-    { label: "Notice Management", path: "/admin/notices", icon: "📝" },
+    { label: "Dashboard", path: "/admin/dashboard" },
+    { label: "Menu Management", path: "/admin/menu" },
+    { label: "Attendance & Reports", path: "/admin/attendance" },
+    { label: "Upload Bill", path: "/admin/bill" },
+    { label: "Notice Management", path: "/admin/notices" },
   ];
 
   const navItems = role === "student" ? studentNavItems : adminNavItems;
 
   return (
-    <div className="flex h-screen bg-background">
+    <div className="flex h-screen" style={{ backgroundColor: "#f5f7fb" }}>
       {/* Sidebar */}
       <div
-        className={`fixed md:static inset-y-0 left-0 z-50 w-64 bg-primary text-primary-foreground flex flex-col transition-transform md:translate-x-0 ${
+        className={`fixed md:static inset-y-0 left-0 z-50 w-64 flex flex-col transition-transform md:translate-x-0 ${
           sidebarOpen ? "translate-x-0" : "-translate-x-full"
         }`}
+        style={{ backgroundColor: "#3f3d56" }}
       >
         {/* Logo Section */}
-        <div className="p-6 border-b border-sidebar-border">
-          <h1 className="text-xl font-bold">Mess Management</h1>
-          <p className="text-sm text-opacity-80 text-primary-foreground">
-            {role === "admin" ? "Administrator" : "Student"}
+        <div className="p-6 border-b" style={{ borderColor: "#6b6f85" }}>
+          <h1 className="text-lg font-medium text-white">Mess Management</h1>
+          <p className="text-xs mt-1" style={{ color: "#a8aab8" }}>
+            {role === "admin" ? "Administrator" : "Student Portal"}
           </p>
         </div>
 
@@ -67,28 +67,28 @@ export default function Layout({ children, role }: LayoutProps) {
               key={item.path}
               onClick={() => {
                 navigate(item.path);
-                // Close sidebar on mobile after navigation
                 if (window.innerWidth < 768) {
                   setSidebarOpen(false);
                 }
               }}
-              className={`w-full text-left px-6 py-3 text-sm font-medium transition-colors ${
-                isActive(item.path)
-                  ? "bg-sidebar-accent bg-opacity-40 border-l-4 border-primary-foreground"
-                  : "hover:bg-sidebar-accent hover:bg-opacity-20"
-              }`}
+              className="w-full text-left px-6 py-3 text-sm font-medium transition-colors"
+              style={{
+                color: isActive(item.path) ? "#5a4fcf" : "#ffffff",
+                backgroundColor: isActive(item.path) ? "rgba(90, 79, 207, 0.1)" : "transparent",
+                borderLeft: isActive(item.path) ? "3px solid #5a4fcf" : "3px solid transparent",
+              }}
             >
-              <span className="mr-3">{item.icon}</span>
               {item.label}
             </button>
           ))}
         </nav>
 
         {/* Logout Button */}
-        <div className="p-4 border-t border-sidebar-border">
+        <div className="p-4 border-t" style={{ borderColor: "#6b6f85" }}>
           <button
             onClick={handleLogout}
-            className="w-full px-4 py-2 bg-primary-foreground text-primary rounded font-medium text-sm hover:opacity-90 transition-opacity"
+            className="w-full px-4 py-2 rounded font-medium text-sm transition-opacity hover:opacity-90"
+            style={{ backgroundColor: "#5a4fcf", color: "#ffffff" }}
           >
             Logout
           </button>
@@ -98,24 +98,31 @@ export default function Layout({ children, role }: LayoutProps) {
       {/* Main Content */}
       <div className="flex-1 flex flex-col min-h-screen">
         {/* Header */}
-        <header className="bg-card border-b border-border shadow-sm">
+        <header
+          className="border-b"
+          style={{ backgroundColor: "#ffffff", borderColor: "#e3e4ea" }}
+        >
           <div className="px-6 py-4 flex items-center justify-between">
             <div className="flex items-center gap-4">
               <button
                 onClick={() => setSidebarOpen(!sidebarOpen)}
-                className="md:hidden p-2 hover:bg-muted rounded transition-colors"
+                className="md:hidden p-2 rounded transition-colors"
+                style={{ backgroundColor: "#f5f7fb" }}
               >
-                {sidebarOpen ? (
-                  <X className="w-5 h-5" />
-                ) : (
-                  <Menu className="w-5 h-5" />
-                )}
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M4 6h16M4 12h16M4 18h16"
+                  />
+                </svg>
               </button>
-              <h2 className="text-sm font-medium text-muted-foreground hidden md:block">
+              <h2 className="text-sm font-medium hidden md:block" style={{ color: "#6b6f85" }}>
                 Welcome, {userName}
               </h2>
             </div>
-            <div className="text-sm text-muted-foreground">
+            <div className="text-sm" style={{ color: "#6b6f85" }}>
               {new Date().toLocaleDateString("en-US", {
                 weekday: "short",
                 year: "numeric",
@@ -127,7 +134,7 @@ export default function Layout({ children, role }: LayoutProps) {
         </header>
 
         {/* Page Content */}
-        <main className="flex-1 overflow-auto bg-background">
+        <main className="flex-1 overflow-auto" style={{ backgroundColor: "#f5f7fb" }}>
           <div className="p-6">{children}</div>
         </main>
       </div>
@@ -135,7 +142,8 @@ export default function Layout({ children, role }: LayoutProps) {
       {/* Mobile Sidebar Overlay */}
       {sidebarOpen && (
         <div
-          className="md:hidden fixed inset-0 bg-black bg-opacity-50 z-40"
+          className="md:hidden fixed inset-0 bg-black z-40"
+          style={{ opacity: 0.5 }}
           onClick={() => setSidebarOpen(false)}
         />
       )}
