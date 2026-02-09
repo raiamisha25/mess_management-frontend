@@ -38,7 +38,6 @@ export default function Register() {
       return;
     }
 
-    // Mock registration - store and redirect to dashboard
     localStorage.setItem("userRole", "student");
     localStorage.setItem("userId", formData.userId);
     localStorage.setItem("userName", formData.name);
@@ -46,22 +45,29 @@ export default function Register() {
   };
 
   return (
-    <div className="min-h-screen bg-background px-4 py-8">
+    <div className="min-h-screen px-4 py-8" style={{ backgroundColor: "#f5f7fb" }}>
       <div className="w-full max-w-2xl mx-auto">
         {/* Header */}
         <div className="text-center mb-8">
-          <h1 className="text-3xl font-bold text-primary mb-2">
-            Mess Management
+          <h1 className="text-2xl font-medium mb-2" style={{ color: "#2e2e3a" }}>
+            Mess Management System
           </h1>
-          <p className="text-muted-foreground">Create Account</p>
+          <p className="text-sm" style={{ color: "#6b6f85" }}>
+            Create Account
+          </p>
         </div>
 
         {/* Form Card */}
-        <div className="hms-card p-8">
-          <h2 className="text-2xl font-bold text-foreground mb-6">Registration</h2>
+        <div
+          className="rounded border p-8"
+          style={{ backgroundColor: "#ffffff", borderColor: "#e3e4ea" }}
+        >
+          <h2 className="text-lg font-medium mb-6" style={{ color: "#2e2e3a" }}>
+            Registration
+          </h2>
 
           {error && (
-            <div className="mb-4 p-3 bg-destructive/10 text-destructive rounded text-sm">
+            <div className="mb-4 p-3 rounded text-sm" style={{ backgroundColor: "#fee2e2", color: "#991b1b" }}>
               {error}
             </div>
           )}
@@ -69,15 +75,14 @@ export default function Register() {
           <form onSubmit={handleRegister} className="space-y-6">
             {/* Personal Information Section */}
             <div>
-              <h3 className="text-sm font-semibold text-primary mb-4">Personal Information</h3>
+              <h3 className="text-sm font-medium mb-4" style={{ color: "#5a4fcf" }}>
+                Personal Information
+              </h3>
               <div className="space-y-4">
                 {/* Name */}
                 <div>
-                  <label htmlFor="name" className="block text-sm font-medium mb-2">
-                    Full Name *
-                  </label>
+                  <label className="hms-label">Full Name *</label>
                   <input
-                    id="name"
                     type="text"
                     name="name"
                     value={formData.name}
@@ -89,11 +94,8 @@ export default function Register() {
 
                 {/* Roll Number */}
                 <div>
-                  <label htmlFor="rollNumber" className="block text-sm font-medium mb-2">
-                    Roll Number *
-                  </label>
+                  <label className="hms-label">Roll Number *</label>
                   <input
-                    id="rollNumber"
                     type="text"
                     name="rollNumber"
                     value={formData.rollNumber}
@@ -107,15 +109,14 @@ export default function Register() {
 
             {/* Academic Information Section */}
             <div>
-              <h3 className="text-sm font-semibold text-primary mb-4">Academic Information</h3>
+              <h3 className="text-sm font-medium mb-4" style={{ color: "#5a4fcf" }}>
+                Academic Information
+              </h3>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                 {/* Course */}
                 <div>
-                  <label htmlFor="course" className="block text-sm font-medium mb-2">
-                    Course *
-                  </label>
+                  <label className="hms-label">Course *</label>
                   <select
-                    id="course"
                     name="course"
                     value={formData.course}
                     onChange={handleChange}
@@ -131,11 +132,8 @@ export default function Register() {
 
                 {/* Specialization */}
                 <div>
-                  <label htmlFor="specialization" className="block text-sm font-medium mb-2">
-                    Specialization
-                  </label>
+                  <label className="hms-label">Specialization</label>
                   <input
-                    id="specialization"
                     type="text"
                     name="specialization"
                     value={formData.specialization}
@@ -147,11 +145,8 @@ export default function Register() {
 
                 {/* Batch */}
                 <div>
-                  <label htmlFor="batch" className="block text-sm font-medium mb-2">
-                    Batch *
-                  </label>
+                  <label className="hms-label">Batch *</label>
                   <select
-                    id="batch"
                     name="batch"
                     value={formData.batch}
                     onChange={handleChange}
@@ -169,15 +164,14 @@ export default function Register() {
 
             {/* Account Information Section */}
             <div>
-              <h3 className="text-sm font-semibold text-primary mb-4">Account Information</h3>
+              <h3 className="text-sm font-medium mb-4" style={{ color: "#5a4fcf" }}>
+                Account Information
+              </h3>
               <div className="space-y-4">
                 {/* User ID */}
                 <div>
-                  <label htmlFor="userId" className="block text-sm font-medium mb-2">
-                    User ID *
-                  </label>
+                  <label className="hms-label">User ID *</label>
                   <input
-                    id="userId"
                     type="text"
                     name="userId"
                     value={formData.userId}
@@ -189,11 +183,8 @@ export default function Register() {
 
                 {/* Password */}
                 <div>
-                  <label htmlFor="password" className="block text-sm font-medium mb-2">
-                    Password *
-                  </label>
+                  <label className="hms-label">Password *</label>
                   <input
-                    id="password"
                     type="password"
                     name="password"
                     value={formData.password}
@@ -213,7 +204,7 @@ export default function Register() {
               <button
                 type="button"
                 onClick={() => navigate("/login")}
-                className="flex-1 border border-border rounded px-4 py-2 font-medium text-sm text-foreground hover:bg-muted transition-colors"
+                className="hms-button-secondary flex-1"
               >
                 Cancel
               </button>
@@ -221,10 +212,11 @@ export default function Register() {
 
             {/* Login Link */}
             <div className="text-center text-sm pt-2">
-              <span className="text-muted-foreground">Already have an account? </span>
+              <span style={{ color: "#6b6f85" }}>Already have an account? </span>
               <button
                 onClick={() => navigate("/login")}
-                className="text-primary hover:underline font-medium"
+                className="font-medium"
+                style={{ color: "#5a4fcf" }}
               >
                 Login
               </button>
