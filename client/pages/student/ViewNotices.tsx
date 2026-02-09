@@ -1,4 +1,3 @@
-import Layout from "@/components/Layout";
 import { useState } from "react";
 
 const noticesData = [
@@ -43,80 +42,78 @@ export default function ViewNotices() {
   const [displayCount, setDisplayCount] = useState(3);
 
   return (
-    <Layout role="student">
-      <div className="max-w-4xl mx-auto">
-        <h1 className="text-2xl font-medium mb-2" style={{ color: "#2e2e3a" }}>
-          Notices
-        </h1>
-        <p className="text-sm mb-6" style={{ color: "#6b6f85" }}>
-          Important announcements and updates
-        </p>
+    <div className="max-w-4xl mx-auto">
+      <h1 className="text-2xl font-medium mb-2" style={{ color: "#2e2e3a" }}>
+        Notices
+      </h1>
+      <p className="text-sm mb-6" style={{ color: "#6b6f85" }}>
+        Important announcements and updates
+      </p>
 
-        <div className="space-y-4">
-          {noticesData.slice(0, displayCount).map((notice) => (
+      <div className="space-y-4">
+        {noticesData.slice(0, displayCount).map((notice) => (
+          <div
+            key={notice.id}
+            className="rounded border"
+            style={{ backgroundColor: "#ffffff", borderColor: "#e3e4ea" }}
+          >
             <div
-              key={notice.id}
-              className="rounded border"
-              style={{ backgroundColor: "#ffffff", borderColor: "#e3e4ea" }}
+              className="p-4 border-b flex justify-between items-start"
+              style={{
+                backgroundColor: "#f5f7fb",
+                borderColor: "#e3e4ea",
+              }}
             >
-              <div
-                className="p-4 border-b flex justify-between items-start"
-                style={{
-                  backgroundColor: "#f5f7fb",
-                  borderColor: "#e3e4ea",
-                }}
-              >
-                <div>
-                  <h3 className="font-medium" style={{ color: "#2e2e3a" }}>
-                    {notice.title}
-                  </h3>
-                  <p className="text-xs mt-1" style={{ color: "#6b6f85" }}>
-                    {new Date(notice.date).toLocaleDateString("en-US", {
-                      year: "numeric",
-                      month: "long",
-                      day: "numeric",
-                    })}
-                  </p>
-                </div>
-              </div>
-
-              <div className="p-4">
-                <p className="text-sm" style={{ color: "#2e2e3a" }}>
-                  {notice.content}
+              <div>
+                <h3 className="font-medium" style={{ color: "#2e2e3a" }}>
+                  {notice.title}
+                </h3>
+                <p className="text-xs mt-1" style={{ color: "#6b6f85" }}>
+                  {new Date(notice.date).toLocaleDateString("en-US", {
+                    year: "numeric",
+                    month: "long",
+                    day: "numeric",
+                  })}
                 </p>
-
-                <div className="mt-4 flex gap-2">
-                  <button
-                    className="hms-button text-sm"
-                  >
-                    Download
-                  </button>
-                </div>
               </div>
             </div>
-          ))}
-        </div>
 
-        {/* Load More Button */}
-        {displayCount < noticesData.length && (
-          <div className="mt-6 text-center">
-            <button
-              onClick={() => setDisplayCount((prev) => prev + 3)}
-              className="hms-button"
-            >
-              Load More Notices
-            </button>
-          </div>
-        )}
+            <div className="p-4">
+              <p className="text-sm" style={{ color: "#2e2e3a" }}>
+                {notice.content}
+              </p>
 
-        {displayCount >= noticesData.length && (
-          <div className="mt-6 text-center">
-            <p className="text-sm" style={{ color: "#6b6f85" }}>
-              All notices loaded
-            </p>
+              <div className="mt-4 flex gap-2">
+                <button
+                  className="hms-button text-sm"
+                >
+                  Download
+                </button>
+              </div>
+            </div>
           </div>
-        )}
+        ))}
       </div>
-    </Layout>
+
+      {/* Load More Button */}
+      {displayCount < noticesData.length && (
+        <div className="mt-6 text-center">
+          <button
+            onClick={() => setDisplayCount((prev) => prev + 3)}
+            className="hms-button"
+          >
+            Load More Notices
+          </button>
+        </div>
+      )}
+
+      {displayCount >= noticesData.length && (
+        <div className="mt-6 text-center">
+          <p className="text-sm" style={{ color: "#6b6f85" }}>
+            All notices loaded
+          </p>
+        </div>
+      )}
+    </div>
   );
 }
