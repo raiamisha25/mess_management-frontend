@@ -119,39 +119,82 @@
     white-space: pre;
   }
 
-  /* HMS-style card shadows */
+  /* HMS Design System - Locked Styles */
+
+  /* Card: White background with thin border */
   .hms-card {
-    @apply bg-card text-card-foreground border border-border rounded shadow-sm;
+    @apply bg-card text-card-foreground border border-border rounded;
+    box-shadow: none;
   }
 
-  /* HMS-style input */
+  /* Input field: White with border, no shadow */
   .hms-input {
-    @apply border border-border rounded bg-input text-foreground px-3 py-2 text-sm transition-colors focus:outline-none focus:ring-1 focus:ring-ring;
+    @apply border border-border rounded bg-input text-foreground px-3 py-2 text-sm transition-colors;
+    @apply focus:outline-none focus:ring-1 focus:ring-primary;
+    font-family: Inter, Arial, sans-serif;
   }
 
-  /* HMS-style button */
+  /* Primary button: Purple #5a4fcf, no hover effects */
   .hms-button {
-    @apply bg-primary text-primary-foreground hover:bg-opacity-90 px-4 py-2 rounded font-medium text-sm transition-colors;
+    @apply bg-primary text-primary-foreground px-4 py-2 rounded font-medium text-sm;
+    @apply hover:opacity-90 transition-opacity;
+    border: none;
+    cursor: pointer;
+    font-family: Inter, Arial, sans-serif;
   }
 
-  /* HMS-style table */
+  .hms-button:disabled {
+    @apply opacity-50 cursor-not-allowed;
+  }
+
+  /* Secondary button: Border style */
+  .hms-button-secondary {
+    @apply border border-border text-foreground bg-card px-4 py-2 rounded font-medium text-sm;
+    @apply hover:bg-muted transition-colors;
+    cursor: pointer;
+    font-family: Inter, Arial, sans-serif;
+  }
+
+  /* Table: Minimal style */
   .hms-table {
     @apply w-full border-collapse;
   }
 
   .hms-table thead {
-    @apply bg-secondary text-secondary-foreground border-b border-border;
+    @apply bg-muted text-foreground border-b border-border;
   }
 
   .hms-table tbody tr {
-    @apply border-b border-border hover:bg-muted;
+    @apply border-b border-border;
+  }
+
+  .hms-table tbody tr:hover {
+    @apply bg-secondary;
   }
 
   .hms-table th {
-    @apply text-left px-4 py-3 font-medium text-sm;
+    @apply text-left px-4 py-3 font-medium text-sm text-foreground;
   }
 
   .hms-table td {
-    @apply px-4 py-3 text-sm;
+    @apply px-4 py-3 text-sm text-foreground;
+  }
+
+  /* Label: Normal weight */
+  .hms-label {
+    @apply block text-sm font-medium text-foreground mb-2;
+    font-family: Inter, Arial, sans-serif;
+  }
+
+  /* Section heading */
+  .hms-heading {
+    @apply text-lg font-medium text-foreground mb-4;
+    font-family: Inter, Arial, sans-serif;
+  }
+
+  /* Subheading */
+  .hms-subheading {
+    @apply text-sm text-muted-foreground mb-2;
+    font-family: Inter, Arial, sans-serif;
   }
 }
