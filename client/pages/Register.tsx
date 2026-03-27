@@ -45,14 +45,14 @@ export default function Register() {
   };
 
   return (
-    <div className="min-h-screen px-4 py-8" style={{ backgroundColor: "#f5f7fb" }}>
+    <div className="min-h-screen px-4 py-8" style={{ backgroundColor: "#0F0F14" }}>
       <div className="w-full max-w-2xl mx-auto">
         {/* Header */}
         <div className="text-center mb-8">
-          <h1 className="text-2xl font-medium mb-2" style={{ color: "#2e2e3a" }}>
+          <h1 className="text-2xl font-medium mb-2" style={{ color: "#FFFFFF" }}>
             Mess Management System
           </h1>
-          <p className="text-sm" style={{ color: "#6b6f85" }}>
+          <p className="text-sm" style={{ color: "#A0A0B2" }}>
             Create Account
           </p>
         </div>
@@ -60,14 +60,14 @@ export default function Register() {
         {/* Form Card */}
         <div
           className="rounded border p-8"
-          style={{ backgroundColor: "#ffffff", borderColor: "#e3e4ea" }}
+          style={{ backgroundColor: "#1A1A24", borderColor: "#2A2A38" }}
         >
-          <h2 className="text-lg font-medium mb-6" style={{ color: "#2e2e3a" }}>
+          <h2 className="text-lg font-medium mb-6" style={{ color: "#FFFFFF" }}>
             Registration
           </h2>
 
           {error && (
-            <div className="mb-4 p-3 rounded text-sm" style={{ backgroundColor: "#fee2e2", color: "#991b1b" }}>
+            <div className="mb-4 p-3 rounded text-sm" style={{ backgroundColor: "rgba(239, 68, 68, 0.1)", color: "#FF6B6B" }}>
               {error}
             </div>
           )}
@@ -75,7 +75,7 @@ export default function Register() {
           <form onSubmit={handleRegister} className="space-y-6">
             {/* Personal Information Section */}
             <div>
-              <h3 className="text-sm font-medium mb-4" style={{ color: "#5a4fcf" }}>
+              <h3 className="text-sm font-medium mb-4" style={{ color: "#7B61FF" }}>
                 Personal Information
               </h3>
               <div className="space-y-4">
@@ -109,7 +109,7 @@ export default function Register() {
 
             {/* Academic Information Section */}
             <div>
-              <h3 className="text-sm font-medium mb-4" style={{ color: "#5a4fcf" }}>
+              <h3 className="text-sm font-medium mb-4" style={{ color: "#7B61FF" }}>
                 Academic Information
               </h3>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-4">

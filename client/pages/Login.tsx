@@ -27,14 +27,14 @@ export default function Login() {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center px-4" style={{ backgroundColor: "#f5f7fb" }}>
+    <div className="min-h-screen flex items-center justify-center px-4" style={{ backgroundColor: "#0F0F14" }}>
       <div className="w-full max-w-sm">
         {/* Header */}
         <div className="text-center mb-8">
-          <h1 className="text-2xl font-medium mb-2" style={{ color: "#2e2e3a" }}>
+          <h1 className="text-2xl font-medium mb-2" style={{ color: "#FFFFFF" }}>
             Mess Management System
           </h1>
-          <p className="text-sm" style={{ color: "#6b6f85" }}>
+          <p className="text-sm" style={{ color: "#A0A0B2" }}>
             Student & Admin Login
           </p>
         </div>
@@ -42,10 +42,10 @@ export default function Login() {
         {/* Form Card */}
         <div
           className="rounded border p-8"
-          style={{ backgroundColor: "#ffffff", borderColor: "#e3e4ea" }}
+          style={{ backgroundColor: "#1A1A24", borderColor: "#2A2A38" }}
         >
           {error && (
-            <div className="mb-4 p-3 rounded text-sm" style={{ backgroundColor: "#fee2e2", color: "#991b1b" }}>
+            <div className="mb-4 p-3 rounded text-sm" style={{ backgroundColor: "rgba(239, 68, 68, 0.1)", color: "#FF6B6B" }}>
               {error}
             </div>
           )}
@@ -83,11 +83,11 @@ export default function Login() {
 
           {/* Registration Link */}
           <div className="mt-4 text-center text-sm">
-            <span style={{ color: "#6b6f85" }}>New user? </span>
+            <span style={{ color: "#A0A0B2" }}>New user? </span>
             <button
               onClick={() => navigate("/register")}
               className="font-medium"
-              style={{ color: "#5a4fcf" }}
+              style={{ color: "#7B61FF" }}
             >
               Register here
             </button>
@@ -96,9 +96,9 @@ export default function Login() {
           {/* Demo Info */}
           <div
             className="mt-6 pt-6 border-t text-xs"
-            style={{ borderColor: "#e3e4ea", color: "#6b6f85" }}
+            style={{ borderColor: "#2A2A38", color: "#A0A0B2" }}
           >
-            <p className="mb-2 font-medium">Demo Credentials:</p>
+            <p className="mb-2 font-medium" style={{ color: "#FFFFFF" }}>Demo Credentials:</p>
             <p>Student: User ID "student1" | Password any</p>
             <p>Admin: User ID "admin" | Password any</p>
           </div>

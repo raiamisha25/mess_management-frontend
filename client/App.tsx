@@ -6,6 +6,9 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 
+// Layout Component
+import ProtectedLayout from "@/components/ProtectedLayout";
+
 // Auth Pages
 import Login from "./pages/Login";
 import Register from "./pages/Register";
@@ -26,100 +29,65 @@ import UploadBill from "./pages/admin/UploadBill";
 import NoticeManagement from "./pages/admin/NoticeManagement";
 
 import NotFound from "./pages/NotFound";
+import { USER_ROLES } from "@/lib/constants";
+import { getUserRole } from "@/lib/auth";
 
 const queryClient = new QueryClient();
 
-// Protected Route Component
-function ProtectedRoute({
-  element,
-  requiredRole,
-}: {
-  element: React.ReactElement;
-  requiredRole: "student" | "admin";
-}) {
-  const userRole = localStorage.getItem("userRole") as "student" | "admin" | null;
+// Root redirect component
+function RootRedirect() {
+  const userRole = getUserRole();
 
   if (!userRole) {
-    return <Navigate to="/login" />;
+    return <Navigate to="/login" replace />;
   }
 
-  if (requiredRole && userRole !== requiredRole) {
-    return <Navigate to={userRole === "admin" ? "/admin/dashboard" : "/student/dashboard"} />;
+  if (userRole === USER_ROLES.ADMIN) {
+    return <Navigate to="/admin/dashboard" replace />;
   }
 
-  return element;
+  return <Navigate to="/student/dashboard" replace />;
 }
 
-const App = () => {
-  return (
-    <QueryClientProvider client={queryClient}>
-      <TooltipProvider>
-        <Toaster />
-        <Sonner />
-        <BrowserRouter>
-          <Routes>
-            {/* Public Routes */}
-            <Route path="/login" element={<Login />} />
-            <Route path="/register" element={<Register />} />
+const App = () => (
+  <QueryClientProvider client={queryClient}>
+    <TooltipProvider>
+      <Toaster />
+      <Sonner />
+      <BrowserRouter>
+        <Routes>
+          {/* Public Routes */}
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
 
-            {/* Student Routes */}
-            <Route
-              path="/student/dashboard"
-              element={<ProtectedRoute element={<StudentDashboard />} requiredRole="student" />}
-            />
-            <Route
-              path="/student/menu"
-              element={<ProtectedRoute element={<ViewMenu />} requiredRole="student" />}
-            />
-            <Route
-              path="/student/attendance"
-              element={<ProtectedRoute element={<MealAttendance />} requiredRole="student" />}
-            />
-            <Route
-              path="/student/cancellation"
-              element={<ProtectedRoute element={<MealCancellation />} requiredRole="student" />}
-            />
-            <Route
-              path="/student/bill"
-              element={<ProtectedRoute element={<ViewBill />} requiredRole="student" />}
-            />
-            <Route
-              path="/student/notices"
-              element={<ProtectedRoute element={<ViewNotices />} requiredRole="student" />}
-            />
+          {/* Student Layout Routes */}
+          <Route element={<ProtectedLayout requiredRole={USER_ROLES.STUDENT} />}>
+            <Route path="/student/dashboard" element={<StudentDashboard />} />
+            <Route path="/student/menu" element={<ViewMenu />} />
+            <Route path="/student/attendance" element={<MealAttendance />} />
+            <Route path="/student/cancellation" element={<MealCancellation />} />
+            <Route path="/student/bill" element={<ViewBill />} />
+            <Route path="/student/notices" element={<ViewNotices />} />
+          </Route>
 
-            {/* Admin Routes */}
-            <Route
-              path="/admin/dashboard"
-              element={<ProtectedRoute element={<AdminDashboard />} requiredRole="admin" />}
-            />
-            <Route
-              path="/admin/menu"
-              element={<ProtectedRoute element={<MenuManagement />} requiredRole="admin" />}
-            />
-            <Route
-              path="/admin/attendance"
-              element={<ProtectedRoute element={<AttendanceReports />} requiredRole="admin" />}
-            />
-            <Route
-              path="/admin/bill"
-              element={<ProtectedRoute element={<UploadBill />} requiredRole="admin" />}
-            />
-            <Route
-              path="/admin/notices"
-              element={<ProtectedRoute element={<NoticeManagement />} requiredRole="admin" />}
-            />
+          {/* Admin Layout Routes */}
+          <Route element={<ProtectedLayout requiredRole={USER_ROLES.ADMIN} />}>
+            <Route path="/admin/dashboard" element={<AdminDashboard />} />
+            <Route path="/admin/menu" element={<MenuManagement />} />
+            <Route path="/admin/attendance" element={<AttendanceReports />} />
+            <Route path="/admin/bill" element={<UploadBill />} />
+            <Route path="/admin/notices" element={<NoticeManagement />} />
+          </Route>
 
-            {/* Redirect root to login */}
-            <Route path="/" element={<Navigate to="/login" />} />
+          {/* Root redirect */}
+          <Route path="/" element={<RootRedirect />} />
 
-            {/* 404 Catch-all */}
-            <Route path="*" element={<NotFound />} />
-          </Routes>
-        </BrowserRouter>
-      </TooltipProvider>
-    </QueryClientProvider>
-  );
-};
+          {/* 404 Catch-all */}
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+      </BrowserRouter>
+    </TooltipProvider>
+  </QueryClientProvider>
+);
 
 export default App;

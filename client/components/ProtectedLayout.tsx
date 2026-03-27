@@ -1,13 +1,14 @@
-import { Navigate } from "react-router-dom";
+import { Navigate, Outlet } from "react-router-dom";
 import { getUserRole } from "@/lib/auth";
 import { USER_ROLES, type UserRole } from "@/lib/constants";
+import StudentLayout from "./StudentLayout";
+import AdminLayout from "./AdminLayout";
 
 interface ProtectedLayoutProps {
-  layout: React.ComponentType;
   requiredRole: UserRole;
 }
 
-export default function ProtectedLayout({ layout: Layout, requiredRole }: ProtectedLayoutProps) {
+export default function ProtectedLayout({ requiredRole }: ProtectedLayoutProps) {
   const userRole = getUserRole();
 
   if (!userRole) {
@@ -20,5 +21,12 @@ export default function ProtectedLayout({ layout: Layout, requiredRole }: Protec
     return <Navigate to={redirectPath} replace />;
   }
 
-  return <Layout />;
+  // Render the appropriate layout based on role
+  const Layout = requiredRole === USER_ROLES.STUDENT ? StudentLayout : AdminLayout;
+
+  return (
+    <Layout>
+      <Outlet />
+    </Layout>
+  );
 }

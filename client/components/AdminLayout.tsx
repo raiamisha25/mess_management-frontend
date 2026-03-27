@@ -1,8 +1,12 @@
 import { useState } from "react";
-import { useNavigate, useLocation, Outlet } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import { logout, getUserName } from "@/lib/auth";
 
-export default function AdminLayout() {
+interface AdminLayoutProps {
+  children: React.ReactNode;
+}
+
+export default function AdminLayout({ children }: AdminLayoutProps) {
   const [sidebarOpen, setSidebarOpen] = useState(true);
   const navigate = useNavigate();
   const location = useLocation();
@@ -26,7 +30,7 @@ export default function AdminLayout() {
   ];
 
   return (
-    <div className="flex h-screen" style={{ backgroundColor: "#f5f7fb" }}>
+    <div className="flex h-screen" style={{ backgroundColor: "#0F0F14" }}>
       {/* Sidebar */}
       <div
         className={`fixed md:static inset-y-0 left-0 z-50 w-64 flex flex-col transition-transform md:translate-x-0 ${
@@ -35,9 +39,9 @@ export default function AdminLayout() {
         style={{ backgroundColor: "#3f3d56" }}
       >
         {/* Logo Section */}
-        <div className="p-6 border-b" style={{ borderColor: "#6b6f85" }}>
+        <div className="p-6 border-b" style={{ borderColor: "#2A2A38" }}>
           <h1 className="text-lg font-medium text-white">Mess Management</h1>
-          <p className="text-xs mt-1" style={{ color: "#a8aab8" }}>
+          <p className="text-xs mt-1" style={{ color: "#A0A0B2" }}>
             Administrator
           </p>
         </div>
@@ -55,9 +59,9 @@ export default function AdminLayout() {
               }}
               className="w-full text-left px-6 py-3 text-sm font-medium transition-colors"
               style={{
-                color: isActive(item.path) ? "#5a4fcf" : "#ffffff",
-                backgroundColor: isActive(item.path) ? "rgba(90, 79, 207, 0.1)" : "transparent",
-                borderLeft: isActive(item.path) ? "3px solid #5a4fcf" : "3px solid transparent",
+                color: isActive(item.path) ? "#7B61FF" : "#ffffff",
+                backgroundColor: isActive(item.path) ? "rgba(123, 97, 255, 0.15)" : "transparent",
+                borderLeft: isActive(item.path) ? "3px solid #7B61FF" : "3px solid transparent",
               }}
             >
               {item.label}
@@ -66,11 +70,11 @@ export default function AdminLayout() {
         </nav>
 
         {/* Logout Button */}
-        <div className="p-4 border-t" style={{ borderColor: "#6b6f85" }}>
+        <div className="p-4 border-t" style={{ borderColor: "#2A2A38" }}>
           <button
             onClick={handleLogout}
-            className="w-full px-4 py-2 rounded font-medium text-sm transition-opacity hover:opacity-90"
-            style={{ backgroundColor: "#5a4fcf", color: "#ffffff" }}
+            className="w-full px-4 py-2 rounded font-medium text-sm transition-all hover:brightness-110"
+            style={{ backgroundColor: "#7B61FF", color: "#ffffff" }}
           >
             Logout
           </button>
@@ -82,14 +86,14 @@ export default function AdminLayout() {
         {/* Header */}
         <header
           className="border-b"
-          style={{ backgroundColor: "#ffffff", borderColor: "#e3e4ea" }}
+          style={{ backgroundColor: "#1A1A24", borderColor: "#2A2A38" }}
         >
           <div className="px-6 py-4 flex items-center justify-between">
             <div className="flex items-center gap-4">
               <button
                 onClick={() => setSidebarOpen(!sidebarOpen)}
                 className="md:hidden p-2 rounded transition-colors"
-                style={{ backgroundColor: "#f5f7fb" }}
+                style={{ backgroundColor: "#2A2A38" }}
               >
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path
@@ -100,11 +104,11 @@ export default function AdminLayout() {
                   />
                 </svg>
               </button>
-              <h2 className="text-sm font-medium hidden md:block" style={{ color: "#6b6f85" }}>
+              <h2 className="text-sm font-medium hidden md:block" style={{ color: "#A0A0B2" }}>
                 Welcome, {userName}
               </h2>
             </div>
-            <div className="text-sm" style={{ color: "#6b6f85" }}>
+            <div className="text-sm" style={{ color: "#A0A0B2" }}>
               {new Date().toLocaleDateString("en-US", {
                 weekday: "short",
                 year: "numeric",
@@ -116,9 +120,9 @@ export default function AdminLayout() {
         </header>
 
         {/* Page Content */}
-        <main className="flex-1 overflow-auto" style={{ backgroundColor: "#f5f7fb" }}>
+        <main className="flex-1 overflow-auto" style={{ backgroundColor: "#0F0F14" }}>
           <div className="p-6">
-            <Outlet />
+            {children}
           </div>
         </main>
       </div>
