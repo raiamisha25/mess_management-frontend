@@ -37,7 +37,7 @@ export default function StudentLayout({ children }: StudentLayoutProps) {
         className={`fixed md:static inset-y-0 left-0 z-50 w-64 flex flex-col transition-transform md:translate-x-0 ${
           sidebarOpen ? "translate-x-0" : "-translate-x-full"
         }`}
-        style={{ backgroundColor: "#3f3d56" }}
+        style={{ backgroundColor: "#12121A" }}
       >
         {/* Logo Section */}
         <div className="p-6 border-b" style={{ borderColor: "#2A2A38" }}>

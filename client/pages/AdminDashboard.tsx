@@ -33,7 +33,7 @@ export default function AdminDashboard() {
         {/* Total Students Card */}
         <div
           className="rounded border p-6"
-          style={{ backgroundColor: "#ffffff", borderColor: "#e3e4ea" }}
+          style={{ backgroundColor: "#1A1A24", borderColor: "#2A2A38" }}
         >
           <h3 className="text-sm font-medium mb-4" style={{ color: "#2e2e3a" }}>
             Total Students
@@ -59,7 +59,7 @@ export default function AdminDashboard() {
         {/* Today's Attendance Card */}
         <div
           className="rounded border p-6"
-          style={{ backgroundColor: "#ffffff", borderColor: "#e3e4ea" }}
+          style={{ backgroundColor: "#1A1A24", borderColor: "#2A2A38" }}
         >
           <h3 className="text-sm font-medium mb-4" style={{ color: "#2e2e3a" }}>
             Today's Attendance
@@ -103,7 +103,7 @@ export default function AdminDashboard() {
         {/* Active Notices Card */}
         <div
           className="rounded border p-6"
-          style={{ backgroundColor: "#ffffff", borderColor: "#e3e4ea" }}
+          style={{ backgroundColor: "#1A1A24", borderColor: "#2A2A38" }}
         >
           <h3 className="text-sm font-medium mb-4" style={{ color: "#2e2e3a" }}>
             Active Notices
@@ -130,7 +130,7 @@ export default function AdminDashboard() {
       {/* Recent Attendance */}
       <div
         className="rounded border p-6 mb-8"
-        style={{ backgroundColor: "#ffffff", borderColor: "#e3e4ea" }}
+        style={{ backgroundColor: "#1A1A24", borderColor: "#2A2A38" }}
       >
         <h3 className="text-sm font-medium mb-6" style={{ color: "#2e2e3a" }}>
           Recent Attendance Summary
@@ -198,7 +198,7 @@ export default function AdminDashboard() {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         <div
           className="rounded border p-6"
-          style={{ backgroundColor: "#ffffff", borderColor: "#e3e4ea" }}
+          style={{ backgroundColor: "#1A1A24", borderColor: "#2A2A38" }}
         >
           <h3 className="text-sm font-medium mb-4" style={{ color: "#2e2e3a" }}>
             Quick Actions
@@ -233,7 +233,7 @@ export default function AdminDashboard() {
 
         <div
           className="rounded border p-6"
-          style={{ backgroundColor: "#ffffff", borderColor: "#e3e4ea" }}
+          style={{ backgroundColor: "#1A1A24", borderColor: "#2A2A38" }}
         >
           <h3 className="text-sm font-medium mb-4" style={{ color: "#2e2e3a" }}>
             System Information
