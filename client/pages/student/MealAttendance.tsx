@@ -21,7 +21,7 @@ export default function MealAttendance() {
 
       <div
         className="rounded border p-6"
-        style={{ backgroundColor: "#ffffff", borderColor: "#e3e4ea" }}
+        style={{ backgroundColor: "#1A1A24", borderColor: "#2A2A38" }}
       >
         {submitted && (
           <div

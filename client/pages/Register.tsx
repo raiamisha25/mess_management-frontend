@@ -164,7 +164,7 @@ export default function Register() {
 
             {/* Account Information Section */}
             <div>
-              <h3 className="text-sm font-medium mb-4" style={{ color: "#5a4fcf" }}>
+              <h3 className="text-sm font-medium mb-4" style={{ color: "#7B61FF" }}>
                 Account Information
               </h3>
               <div className="space-y-4">
@@ -212,11 +212,11 @@ export default function Register() {
 
             {/* Login Link */}
             <div className="text-center text-sm pt-2">
-              <span style={{ color: "#6b6f85" }}>Already have an account? </span>
+              <span style={{ color: "#A0A0B2" }}>Already have an account? </span>
               <button
                 onClick={() => navigate("/login")}
                 className="font-medium"
-                style={{ color: "#5a4fcf" }}
+                style={{ color: "#7B61FF" }}
               >
                 Login
               </button>

@@ -26,10 +26,10 @@ export default function StudentDashboard() {
     <div className="max-w-6xl mx-auto">
       {/* Welcome Section */}
       <div className="mb-8">
-        <h1 className="text-2xl font-medium mb-2" style={{ color: "#2e2e3a" }}>
+        <h1 className="text-2xl font-medium mb-2" style={{ color: "#FFFFFF" }}>
           Welcome, {userName}
         </h1>
-        <p className="text-sm" style={{ color: "#6b6f85" }}>
+        <p className="text-sm" style={{ color: "#A0A0B2" }}>
           Here's your mess management dashboard
         </p>
       </div>
@@ -39,34 +39,34 @@ export default function StudentDashboard() {
         {/* Today's Menu Card */}
         <div
           className="rounded border p-6"
-          style={{ backgroundColor: "#ffffff", borderColor: "#e3e4ea" }}
+          style={{ backgroundColor: "#1A1A24", borderColor: "#2A2A38" }}
         >
-          <h3 className="text-sm font-medium mb-4" style={{ color: "#2e2e3a" }}>
+          <h3 className="text-sm font-medium mb-4" style={{ color: "#FFFFFF" }}>
             Today's Menu
           </h3>
 
           <div className="space-y-3">
             <div>
-              <p className="text-xs font-medium mb-1" style={{ color: "#6b6f85" }}>
+              <p className="text-xs font-medium mb-1" style={{ color: "#A0A0B2" }}>
                 BREAKFAST
               </p>
-              <p className="text-sm" style={{ color: "#2e2e3a" }}>
+              <p className="text-sm" style={{ color: "#FFFFFF" }}>
                 {mockMenu.breakfast}
               </p>
             </div>
             <div>
-              <p className="text-xs font-medium mb-1" style={{ color: "#6b6f85" }}>
+              <p className="text-xs font-medium mb-1" style={{ color: "#A0A0B2" }}>
                 LUNCH
               </p>
-              <p className="text-sm" style={{ color: "#2e2e3a" }}>
+              <p className="text-sm" style={{ color: "#FFFFFF" }}>
                 {mockMenu.lunch}
               </p>
             </div>
             <div>
-              <p className="text-xs font-medium mb-1" style={{ color: "#6b6f85" }}>
+              <p className="text-xs font-medium mb-1" style={{ color: "#A0A0B2" }}>
                 DINNER
               </p>
-              <p className="text-sm" style={{ color: "#2e2e3a" }}>
+              <p className="text-sm" style={{ color: "#FFFFFF" }}>
                 {mockMenu.dinner}
               </p>
             </div>
@@ -83,15 +83,15 @@ export default function StudentDashboard() {
         {/* Attendance Status Card */}
         <div
           className="rounded border p-6"
-          style={{ backgroundColor: "#ffffff", borderColor: "#e3e4ea" }}
+          style={{ backgroundColor: "#1A1A24", borderColor: "#2A2A38" }}
         >
-          <h3 className="text-sm font-medium mb-4" style={{ color: "#2e2e3a" }}>
+          <h3 className="text-sm font-medium mb-4" style={{ color: "#FFFFFF" }}>
             Today's Attendance
           </h3>
 
           <div className="space-y-3">
             <div>
-              <p className="text-xs font-medium mb-1" style={{ color: "#6b6f85" }}>
+              <p className="text-xs font-medium mb-1" style={{ color: "#A0A0B2" }}>
                 STATUS
               </p>
               <div className="flex items-center gap-2">
@@ -99,7 +99,7 @@ export default function StudentDashboard() {
                   className="w-2 h-2 rounded-full"
                   style={{ backgroundColor: "#10b981" }}
                 ></div>
-                <p className="text-sm font-medium" style={{ color: "#2e2e3a" }}>
+                <p className="text-sm font-medium" style={{ color: "#FFFFFF" }}>
                   {mockAttendance.status}
                 </p>
               </div>
@@ -109,13 +109,13 @@ export default function StudentDashboard() {
               className="p-3 rounded"
               style={{ backgroundColor: "#f5f7fb" }}
             >
-              <p className="text-xs font-medium mb-1" style={{ color: "#6b6f85" }}>
+              <p className="text-xs font-medium mb-1" style={{ color: "#A0A0B2" }}>
                 DATE & MEAL
               </p>
-              <p className="text-sm" style={{ color: "#2e2e3a" }}>
+              <p className="text-sm" style={{ color: "#FFFFFF" }}>
                 {mockAttendance.date}
               </p>
-              <p className="text-sm" style={{ color: "#2e2e3a" }}>
+              <p className="text-sm" style={{ color: "#FFFFFF" }}>
                 {mockAttendance.meal}
               </p>
             </div>
@@ -132,23 +132,23 @@ export default function StudentDashboard() {
         {/* Latest Notice Card */}
         <div
           className="rounded border p-6"
-          style={{ backgroundColor: "#ffffff", borderColor: "#e3e4ea" }}
+          style={{ backgroundColor: "#1A1A24", borderColor: "#2A2A38" }}
         >
-          <h3 className="text-sm font-medium mb-4" style={{ color: "#2e2e3a" }}>
+          <h3 className="text-sm font-medium mb-4" style={{ color: "#FFFFFF" }}>
             Latest Notice
           </h3>
 
           <div className="space-y-3">
             <div>
-              <p className="text-xs font-medium" style={{ color: "#5a4fcf" }}>
+              <p className="text-xs font-medium" style={{ color: "#7B61FF" }}>
                 {mockNotice.date}
               </p>
-              <p className="font-medium text-sm mt-1" style={{ color: "#2e2e3a" }}>
+              <p className="font-medium text-sm mt-1" style={{ color: "#FFFFFF" }}>
                 {mockNotice.title}
               </p>
             </div>
 
-            <p className="text-sm" style={{ color: "#6b6f85" }}>
+            <p className="text-sm" style={{ color: "#A0A0B2" }}>
               {mockNotice.content}
             </p>
 
@@ -156,7 +156,7 @@ export default function StudentDashboard() {
               className="pt-2 border-t"
               style={{ borderColor: "#e3e4ea" }}
             >
-              <p className="text-xs" style={{ color: "#6b6f85" }}>
+              <p className="text-xs" style={{ color: "#A0A0B2" }}>
                 3 new notices available
               </p>
             </div>
@@ -176,9 +176,9 @@ export default function StudentDashboard() {
         {/* Quick Actions */}
         <div
           className="rounded border p-6"
-          style={{ backgroundColor: "#ffffff", borderColor: "#e3e4ea" }}
+          style={{ backgroundColor: "#1A1A24", borderColor: "#2A2A38" }}
         >
-          <h3 className="text-sm font-medium mb-4" style={{ color: "#2e2e3a" }}>
+          <h3 className="text-sm font-medium mb-4" style={{ color: "#FFFFFF" }}>
             Quick Actions
           </h3>
           <div className="grid grid-cols-2 gap-3">
@@ -212,9 +212,9 @@ export default function StudentDashboard() {
         {/* Account Information */}
         <div
           className="rounded border p-6"
-          style={{ backgroundColor: "#ffffff", borderColor: "#e3e4ea" }}
+          style={{ backgroundColor: "#1A1A24", borderColor: "#2A2A38" }}
         >
-          <h3 className="text-sm font-medium mb-4" style={{ color: "#2e2e3a" }}>
+          <h3 className="text-sm font-medium mb-4" style={{ color: "#FFFFFF" }}>
             Account Information
           </h3>
           <div className="space-y-4">
@@ -222,10 +222,10 @@ export default function StudentDashboard() {
               className="flex justify-between items-center pb-3 border-b"
               style={{ borderColor: "#e3e4ea" }}
             >
-              <span className="text-sm" style={{ color: "#6b6f85" }}>
+              <span className="text-sm" style={{ color: "#A0A0B2" }}>
                 User ID
               </span>
-              <span className="text-sm font-medium" style={{ color: "#2e2e3a" }}>
+              <span className="text-sm font-medium" style={{ color: "#FFFFFF" }}>
                 {localStorage.getItem("userId")}
               </span>
             </div>
@@ -233,15 +233,15 @@ export default function StudentDashboard() {
               className="flex justify-between items-center pb-3 border-b"
               style={{ borderColor: "#e3e4ea" }}
             >
-              <span className="text-sm" style={{ color: "#6b6f85" }}>
+              <span className="text-sm" style={{ color: "#A0A0B2" }}>
                 Role
               </span>
-              <span className="text-sm font-medium" style={{ color: "#2e2e3a" }}>
+              <span className="text-sm font-medium" style={{ color: "#FFFFFF" }}>
                 Student
               </span>
             </div>
             <div className="flex justify-between items-center">
-              <span className="text-sm" style={{ color: "#6b6f85" }}>
+              <span className="text-sm" style={{ color: "#A0A0B2" }}>
                 Status
               </span>
               <span

@@ -34,10 +34,10 @@ const menuData = [
 export default function ViewMenu() {
   return (
     <div className="max-w-4xl mx-auto">
-      <h1 className="text-2xl font-medium mb-2" style={{ color: "#2e2e3a" }}>
+      <h1 className="text-2xl font-medium mb-2" style={{ color: "#FFFFFF" }}>
         Mess Menu
       </h1>
-      <p className="text-sm mb-6" style={{ color: "#6b6f85" }}>
+      <p className="text-sm mb-6" style={{ color: "#A0A0B2" }}>
         Weekly mess menu schedule
       </p>
 
@@ -46,44 +46,44 @@ export default function ViewMenu() {
           <div
             key={index}
             className="rounded border"
-            style={{ backgroundColor: "#ffffff", borderColor: "#e3e4ea" }}
+            style={{ backgroundColor: "#1A1A24", borderColor: "#2A2A38" }}
           >
             <div
               className="p-4 border-b"
               style={{
-                backgroundColor: "#f5f7fb",
-                borderColor: "#e3e4ea",
+                backgroundColor: "#0F0F14",
+                borderColor: "#2A2A38",
               }}
             >
-              <h3 className="font-medium" style={{ color: "#2e2e3a" }}>
+              <h3 className="font-medium" style={{ color: "#FFFFFF" }}>
                 {menu.date}
               </h3>
             </div>
 
             <div className="p-4 space-y-3">
               <div>
-                <p className="text-xs font-medium mb-1" style={{ color: "#5a4fcf" }}>
+                <p className="text-xs font-medium mb-1" style={{ color: "#7B61FF" }}>
                   BREAKFAST
                 </p>
-                <p className="text-sm" style={{ color: "#2e2e3a" }}>
+                <p className="text-sm" style={{ color: "#FFFFFF" }}>
                   {menu.breakfast}
                 </p>
               </div>
 
               <div>
-                <p className="text-xs font-medium mb-1" style={{ color: "#5a4fcf" }}>
+                <p className="text-xs font-medium mb-1" style={{ color: "#7B61FF" }}>
                   LUNCH
                 </p>
-                <p className="text-sm" style={{ color: "#2e2e3a" }}>
+                <p className="text-sm" style={{ color: "#FFFFFF" }}>
                   {menu.lunch}
                 </p>
               </div>
 
               <div>
-                <p className="text-xs font-medium mb-1" style={{ color: "#5a4fcf" }}>
+                <p className="text-xs font-medium mb-1" style={{ color: "#7B61FF" }}>
                   DINNER
                 </p>
-                <p className="text-sm" style={{ color: "#2e2e3a" }}>
+                <p className="text-sm" style={{ color: "#FFFFFF" }}>
                   {menu.dinner}
                 </p>
               </div>
