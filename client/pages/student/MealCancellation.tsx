@@ -12,10 +12,10 @@ export default function MealCancellation() {
 
   return (
     <div className="max-w-2xl mx-auto">
-      <h1 className="text-2xl font-medium mb-2" style={{ color: "#2e2e3a" }}>
+      <h1 className="text-2xl font-medium mb-2" style={{ color: "#FFFFFF" }}>
         Meal Cancellation
       </h1>
-      <p className="text-sm mb-6" style={{ color: "#6b6f85" }}>
+      <p className="text-sm mb-6" style={{ color: "#A0A0B2" }}>
         Cancel your meals when needed
       </p>
 
@@ -53,7 +53,7 @@ export default function MealCancellation() {
                   />
                   <span
                     className="text-sm font-medium"
-                    style={{ color: "#2e2e3a" }}
+                    style={{ color: "#FFFFFF" }}
                   >
                     {option.label}
                   </span>
@@ -76,7 +76,7 @@ export default function MealCancellation() {
                     />
                     <span
                       className="text-sm"
-                      style={{ color: "#2e2e3a" }}
+                      style={{ color: "#FFFFFF" }}
                     >
                       {meal.charAt(0).toUpperCase() + meal.slice(1)}
                     </span>
@@ -99,9 +99,9 @@ export default function MealCancellation() {
           {/* Info Box */}
           <div
             className="p-4 rounded"
-            style={{ backgroundColor: "#f5f7fb" }}
+            style={{ backgroundColor: "#0F0F14" }}
           >
-            <p className="text-sm" style={{ color: "#6b6f85" }}>
+            <p className="text-sm" style={{ color: "#A0A0B2" }}>
               Cancelling meals may affect your monthly billing. Please contact the mess
               administrator for more information.
             </p>

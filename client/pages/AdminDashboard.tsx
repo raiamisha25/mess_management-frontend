@@ -20,10 +20,10 @@ export default function AdminDashboard() {
     <div className="max-w-6xl mx-auto">
       {/* Welcome Section */}
       <div className="mb-8">
-        <h1 className="text-2xl font-medium mb-2" style={{ color: "#2e2e3a" }}>
+        <h1 className="text-2xl font-medium mb-2" style={{ color: "#FFFFFF" }}>
           Welcome, {userName}
         </h1>
-        <p className="text-sm" style={{ color: "#6b6f85" }}>
+        <p className="text-sm" style={{ color: "#A0A0B2" }}>
           Mess Management System - Administrator Dashboard
         </p>
       </div>
@@ -35,7 +35,7 @@ export default function AdminDashboard() {
           className="rounded border p-6"
           style={{ backgroundColor: "#1A1A24", borderColor: "#2A2A38" }}
         >
-          <h3 className="text-sm font-medium mb-4" style={{ color: "#2e2e3a" }}>
+          <h3 className="text-sm font-medium mb-4" style={{ color: "#FFFFFF" }}>
             Total Students
           </h3>
 
@@ -43,7 +43,7 @@ export default function AdminDashboard() {
             <p className="text-3xl font-medium" style={{ color: "#5a4fcf" }}>
               {mockStats.totalStudents}
             </p>
-            <p className="text-sm" style={{ color: "#6b6f85" }}>
+            <p className="text-sm" style={{ color: "#A0A0B2" }}>
               Active mess members
             </p>
           </div>
@@ -61,7 +61,7 @@ export default function AdminDashboard() {
           className="rounded border p-6"
           style={{ backgroundColor: "#1A1A24", borderColor: "#2A2A38" }}
         >
-          <h3 className="text-sm font-medium mb-4" style={{ color: "#2e2e3a" }}>
+          <h3 className="text-sm font-medium mb-4" style={{ color: "#FFFFFF" }}>
             Today's Attendance
           </h3>
 
@@ -70,7 +70,7 @@ export default function AdminDashboard() {
               {mockStats.todayAttendance}
             </p>
             <div className="flex items-center justify-between">
-              <p className="text-sm" style={{ color: "#6b6f85" }}>
+              <p className="text-sm" style={{ color: "#A0A0B2" }}>
                 {Math.round(
                   (mockStats.todayAttendance / mockStats.totalStudents) * 100
                 )}
@@ -105,7 +105,7 @@ export default function AdminDashboard() {
           className="rounded border p-6"
           style={{ backgroundColor: "#1A1A24", borderColor: "#2A2A38" }}
         >
-          <h3 className="text-sm font-medium mb-4" style={{ color: "#2e2e3a" }}>
+          <h3 className="text-sm font-medium mb-4" style={{ color: "#FFFFFF" }}>
             Active Notices
           </h3>
 
@@ -113,7 +113,7 @@ export default function AdminDashboard() {
             <p className="text-3xl font-medium" style={{ color: "#5a4fcf" }}>
               {mockStats.activeNotices}
             </p>
-            <p className="text-sm" style={{ color: "#6b6f85" }}>
+            <p className="text-sm" style={{ color: "#A0A0B2" }}>
               Current announcements
             </p>
           </div>
@@ -132,7 +132,7 @@ export default function AdminDashboard() {
         className="rounded border p-6 mb-8"
         style={{ backgroundColor: "#1A1A24", borderColor: "#2A2A38" }}
       >
-        <h3 className="text-sm font-medium mb-6" style={{ color: "#2e2e3a" }}>
+        <h3 className="text-sm font-medium mb-6" style={{ color: "#FFFFFF" }}>
           Recent Attendance Summary
         </h3>
 
@@ -182,7 +182,7 @@ export default function AdminDashboard() {
           className="mt-6 pt-6 border-t flex justify-between items-center"
           style={{ borderColor: "#e3e4ea" }}
         >
-          <p className="text-sm" style={{ color: "#6b6f85" }}>
+          <p className="text-sm" style={{ color: "#A0A0B2" }}>
             Updated today at {new Date().toLocaleTimeString()}
           </p>
           <button
@@ -200,7 +200,7 @@ export default function AdminDashboard() {
           className="rounded border p-6"
           style={{ backgroundColor: "#1A1A24", borderColor: "#2A2A38" }}
         >
-          <h3 className="text-sm font-medium mb-4" style={{ color: "#2e2e3a" }}>
+          <h3 className="text-sm font-medium mb-4" style={{ color: "#FFFFFF" }}>
             Quick Actions
           </h3>
           <div className="grid grid-cols-2 gap-3">
@@ -235,7 +235,7 @@ export default function AdminDashboard() {
           className="rounded border p-6"
           style={{ backgroundColor: "#1A1A24", borderColor: "#2A2A38" }}
         >
-          <h3 className="text-sm font-medium mb-4" style={{ color: "#2e2e3a" }}>
+          <h3 className="text-sm font-medium mb-4" style={{ color: "#FFFFFF" }}>
             System Information
           </h3>
           <div className="space-y-4">
@@ -243,10 +243,10 @@ export default function AdminDashboard() {
               className="flex justify-between items-center pb-3 border-b"
               style={{ borderColor: "#e3e4ea" }}
             >
-              <span className="text-sm" style={{ color: "#6b6f85" }}>
+              <span className="text-sm" style={{ color: "#A0A0B2" }}>
                 Admin ID
               </span>
-              <span className="text-sm font-medium" style={{ color: "#2e2e3a" }}>
+              <span className="text-sm font-medium" style={{ color: "#FFFFFF" }}>
                 {localStorage.getItem("userId")}
               </span>
             </div>
@@ -254,18 +254,18 @@ export default function AdminDashboard() {
               className="flex justify-between items-center pb-3 border-b"
               style={{ borderColor: "#e3e4ea" }}
             >
-              <span className="text-sm" style={{ color: "#6b6f85" }}>
+              <span className="text-sm" style={{ color: "#A0A0B2" }}>
                 Role
               </span>
-              <span className="text-sm font-medium" style={{ color: "#2e2e3a" }}>
+              <span className="text-sm font-medium" style={{ color: "#FFFFFF" }}>
                 Administrator
               </span>
             </div>
             <div className="flex justify-between items-center">
-              <span className="text-sm" style={{ color: "#6b6f85" }}>
+              <span className="text-sm" style={{ color: "#A0A0B2" }}>
                 Last Updated
               </span>
-              <span className="text-sm font-medium" style={{ color: "#2e2e3a" }}>
+              <span className="text-sm font-medium" style={{ color: "#FFFFFF" }}>
                 {new Date().toLocaleDateString()}
               </span>
             </div>

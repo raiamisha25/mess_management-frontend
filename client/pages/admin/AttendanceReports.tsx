@@ -57,17 +57,17 @@ export default function AttendanceReports() {
 
   return (
     <div className="max-w-6xl mx-auto">
-      <h1 className="text-2xl font-medium mb-2" style={{ color: "#2e2e3a" }}>
+      <h1 className="text-2xl font-medium mb-2" style={{ color: "#FFFFFF" }}>
         Attendance & Reports
       </h1>
-      <p className="text-sm mb-6" style={{ color: "#6b6f85" }}>
+      <p className="text-sm mb-6" style={{ color: "#A0A0B2" }}>
         View attendance records and generate reports
       </p>
 
       {/* Filters */}
       <div
         className="rounded border p-4 mb-6"
-        style={{ backgroundColor: "#ffffff", borderColor: "#e3e4ea" }}
+        style={{ backgroundColor: "#1A1A24", borderColor: "#2A2A38" }}
       >
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
           {/* Filter by Meal */}
@@ -114,7 +114,7 @@ export default function AttendanceReports() {
       {/* Attendance Table */}
       <div
         className="rounded border overflow-hidden"
-        style={{ backgroundColor: "#ffffff", borderColor: "#e3e4ea" }}
+        style={{ backgroundColor: "#1A1A24", borderColor: "#2A2A38" }}
       >
         <div className="overflow-x-auto">
           <table className="hms-table">

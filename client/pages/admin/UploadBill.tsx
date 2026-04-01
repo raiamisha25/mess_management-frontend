@@ -28,17 +28,17 @@ export default function UploadBill() {
 
   return (
     <div className="max-w-4xl mx-auto">
-      <h1 className="text-2xl font-medium mb-2" style={{ color: "#2e2e3a" }}>
+      <h1 className="text-2xl font-medium mb-2" style={{ color: "#FFFFFF" }}>
         Upload Bill
       </h1>
-      <p className="text-sm mb-6" style={{ color: "#6b6f85" }}>
+      <p className="text-sm mb-6" style={{ color: "#A0A0B2" }}>
         Upload monthly mess bills for students
       </p>
 
       {/* Upload Form */}
       <div
         className="rounded border p-6 mb-6"
-        style={{ backgroundColor: "#ffffff", borderColor: "#e3e4ea" }}
+        style={{ backgroundColor: "#1A1A24", borderColor: "#2A2A38" }}
       >
         {uploaded && (
           <div
@@ -82,11 +82,11 @@ export default function UploadBill() {
                 <p className="font-medium" style={{ color: "#5a4fcf" }}>
                   Click to upload or drag and drop
                 </p>
-                <p className="text-xs mt-1" style={{ color: "#6b6f85" }}>
+                <p className="text-xs mt-1" style={{ color: "#A0A0B2" }}>
                   PDF files only (Max 10MB)
                 </p>
                 {fileName && (
-                  <p className="text-sm mt-2 font-medium" style={{ color: "#2e2e3a" }}>
+                  <p className="text-sm mt-2 font-medium" style={{ color: "#FFFFFF" }}>
                     Selected: {fileName}
                   </p>
                 )}
@@ -104,9 +104,9 @@ export default function UploadBill() {
       {/* Uploaded Bills */}
       <div
         className="rounded border p-6"
-        style={{ backgroundColor: "#ffffff", borderColor: "#e3e4ea" }}
+        style={{ backgroundColor: "#1A1A24", borderColor: "#2A2A38" }}
       >
-        <h3 className="text-sm font-medium mb-4" style={{ color: "#2e2e3a" }}>
+        <h3 className="text-sm font-medium mb-4" style={{ color: "#FFFFFF" }}>
           Uploaded Bills
         </h3>
 

@@ -12,10 +12,10 @@ export default function MealAttendance() {
 
   return (
     <div className="max-w-2xl mx-auto">
-      <h1 className="text-2xl font-medium mb-2" style={{ color: "#2e2e3a" }}>
+      <h1 className="text-2xl font-medium mb-2" style={{ color: "#FFFFFF" }}>
         Meal Attendance
       </h1>
-      <p className="text-sm mb-6" style={{ color: "#6b6f85" }}>
+      <p className="text-sm mb-6" style={{ color: "#A0A0B2" }}>
         Mark your attendance for meals
       </p>
 
@@ -49,7 +49,7 @@ export default function MealAttendance() {
                   />
                   <span
                     className="text-sm font-medium"
-                    style={{ color: "#2e2e3a" }}
+                    style={{ color: "#FFFFFF" }}
                   >
                     {meal.charAt(0).toUpperCase() + meal.slice(1)}
                   </span>
@@ -71,11 +71,11 @@ export default function MealAttendance() {
           {/* Confirmation Text */}
           <div
             className="p-4 rounded"
-            style={{ backgroundColor: "#f5f7fb" }}
+            style={{ backgroundColor: "#0F0F14" }}
           >
-            <p className="text-sm" style={{ color: "#6b6f85" }}>
+            <p className="text-sm" style={{ color: "#A0A0B2" }}>
               You are about to mark attendance for{" "}
-              <span className="font-medium" style={{ color: "#2e2e3a" }}>
+              <span className="font-medium" style={{ color: "#FFFFFF" }}>
                 {selectedMeal.charAt(0).toUpperCase() + selectedMeal.slice(1)}
               </span>
               . Confirm to proceed.

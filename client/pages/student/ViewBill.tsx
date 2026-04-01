@@ -22,17 +22,17 @@ const bills = [
 export default function ViewBill() {
   return (
     <div className="max-w-4xl mx-auto">
-      <h1 className="text-2xl font-medium mb-2" style={{ color: "#2e2e3a" }}>
+      <h1 className="text-2xl font-medium mb-2" style={{ color: "#FFFFFF" }}>
         Mess Bill
       </h1>
-      <p className="text-sm mb-6" style={{ color: "#6b6f85" }}>
+      <p className="text-sm mb-6" style={{ color: "#A0A0B2" }}>
         View and download your monthly mess bills
       </p>
 
       {/* Bills Table */}
       <div
         className="rounded border overflow-hidden"
-        style={{ backgroundColor: "#ffffff", borderColor: "#e3e4ea" }}
+        style={{ backgroundColor: "#1A1A24", borderColor: "#2A2A38" }}
       >
         <table className="hms-table">
           <thead>
@@ -86,12 +86,12 @@ export default function ViewBill() {
       {/* Payment Instructions */}
       <div
         className="rounded border p-6 mt-6"
-        style={{ backgroundColor: "#ffffff", borderColor: "#e3e4ea" }}
+        style={{ backgroundColor: "#1A1A24", borderColor: "#2A2A38" }}
       >
-        <h3 className="text-sm font-medium mb-4" style={{ color: "#2e2e3a" }}>
+        <h3 className="text-sm font-medium mb-4" style={{ color: "#FFFFFF" }}>
           Payment Instructions
         </h3>
-        <div className="space-y-2 text-sm" style={{ color: "#6b6f85" }}>
+        <div className="space-y-2 text-sm" style={{ color: "#A0A0B2" }}>
           <p>• Payment is due by the 5th of each month</p>
           <p>• Pay through the college portal or mess office</p>
           <p>• Keep your payment receipts for reference</p>

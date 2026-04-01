@@ -47,19 +47,19 @@ export default function NoticeManagement() {
 
   return (
     <div className="max-w-4xl mx-auto">
-      <h1 className="text-2xl font-medium mb-2" style={{ color: "#2e2e3a" }}>
+      <h1 className="text-2xl font-medium mb-2" style={{ color: "#FFFFFF" }}>
         Notice Management
       </h1>
-      <p className="text-sm mb-6" style={{ color: "#6b6f85" }}>
+      <p className="text-sm mb-6" style={{ color: "#A0A0B2" }}>
         Upload and manage notices for students
       </p>
 
       {/* Upload Notice Form */}
       <div
         className="rounded border p-6 mb-6"
-        style={{ backgroundColor: "#ffffff", borderColor: "#e3e4ea" }}
+        style={{ backgroundColor: "#1A1A24", borderColor: "#2A2A38" }}
       >
-        <h3 className="text-sm font-medium mb-4" style={{ color: "#2e2e3a" }}>
+        <h3 className="text-sm font-medium mb-4" style={{ color: "#FFFFFF" }}>
           Post New Notice
         </h3>
 
@@ -110,9 +110,9 @@ export default function NoticeManagement() {
       {/* Existing Notices */}
       <div
         className="rounded border p-6"
-        style={{ backgroundColor: "#ffffff", borderColor: "#e3e4ea" }}
+        style={{ backgroundColor: "#1A1A24", borderColor: "#2A2A38" }}
       >
-        <h3 className="text-sm font-medium mb-4" style={{ color: "#2e2e3a" }}>
+        <h3 className="text-sm font-medium mb-4" style={{ color: "#FFFFFF" }}>
           All Notices
         </h3>
 
@@ -125,10 +125,10 @@ export default function NoticeManagement() {
             >
               <div className="flex justify-between items-start mb-2">
                 <div>
-                  <h4 className="font-medium" style={{ color: "#2e2e3a" }}>
+                  <h4 className="font-medium" style={{ color: "#FFFFFF" }}>
                     {notice.title}
                   </h4>
-                  <p className="text-xs mt-1" style={{ color: "#6b6f85" }}>
+                  <p className="text-xs mt-1" style={{ color: "#A0A0B2" }}>
                     {new Date(notice.date).toLocaleDateString("en-US", {
                       year: "numeric",
                       month: "long",
@@ -138,7 +138,7 @@ export default function NoticeManagement() {
                 </div>
               </div>
 
-              <p className="text-sm mb-3" style={{ color: "#2e2e3a" }}>
+              <p className="text-sm mb-3" style={{ color: "#FFFFFF" }}>
                 {notice.content}
               </p>
 

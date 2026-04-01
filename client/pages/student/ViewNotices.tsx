@@ -43,10 +43,10 @@ export default function ViewNotices() {
 
   return (
     <div className="max-w-4xl mx-auto">
-      <h1 className="text-2xl font-medium mb-2" style={{ color: "#2e2e3a" }}>
+      <h1 className="text-2xl font-medium mb-2" style={{ color: "#FFFFFF" }}>
         Notices
       </h1>
-      <p className="text-sm mb-6" style={{ color: "#6b6f85" }}>
+      <p className="text-sm mb-6" style={{ color: "#A0A0B2" }}>
         Important announcements and updates
       </p>
 
@@ -55,7 +55,7 @@ export default function ViewNotices() {
           <div
             key={notice.id}
             className="rounded border"
-            style={{ backgroundColor: "#ffffff", borderColor: "#e3e4ea" }}
+            style={{ backgroundColor: "#1A1A24", borderColor: "#2A2A38" }}
           >
             <div
               className="p-4 border-b flex justify-between items-start"
@@ -65,10 +65,10 @@ export default function ViewNotices() {
               }}
             >
               <div>
-                <h3 className="font-medium" style={{ color: "#2e2e3a" }}>
+                <h3 className="font-medium" style={{ color: "#FFFFFF" }}>
                   {notice.title}
                 </h3>
-                <p className="text-xs mt-1" style={{ color: "#6b6f85" }}>
+                <p className="text-xs mt-1" style={{ color: "#A0A0B2" }}>
                   {new Date(notice.date).toLocaleDateString("en-US", {
                     year: "numeric",
                     month: "long",
@@ -79,7 +79,7 @@ export default function ViewNotices() {
             </div>
 
             <div className="p-4">
-              <p className="text-sm" style={{ color: "#2e2e3a" }}>
+              <p className="text-sm" style={{ color: "#FFFFFF" }}>
                 {notice.content}
               </p>
 
@@ -109,7 +109,7 @@ export default function ViewNotices() {
 
       {displayCount >= noticesData.length && (
         <div className="mt-6 text-center">
-          <p className="text-sm" style={{ color: "#6b6f85" }}>
+          <p className="text-sm" style={{ color: "#A0A0B2" }}>
             All notices loaded
           </p>
         </div>
